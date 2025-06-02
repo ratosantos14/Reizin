@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reizin Xiter</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: red;
+      display: block;
+      font-weight: normal;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .section-title {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .button, .tab-active {
+      background-color: #2a2a2a;
+      border: none;
+      color: #fff;
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tab-active {
+      background-color: red;
+      font-weight: bold;
+    }
+
+    .version {
+      font-size: 12px;
+      color: #888;
+      margin-top: 40px;
+    }
+
+    .main {
+      flex: 1;
+      padding: 40px;
+      background-color: #141414;
+      position: relative;
+    }
+
+    .top-right-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .feature-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2e2e2e;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .status {
+      color: #bbb;
+      user-select: none;
+    }
+
+    .status.active {
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .feature-btn:hover {
+      background-color: #3a3a3a;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div>
+      <div class="logo">
+        Reizin <span>Xiter</span>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Protect</div>
+        <button class="button" onclick="toggleBypass(this)">
+          Bypass <span class="status">Desativado</span>
+        </button>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Funções</div>
+        <button class="tab-active">Aimbots</button>
+      </div>
+    </div>
+
+    <div class="version">VERSION : 1.111.1</div>
+  </div>
+
+  <div class="main">
+    <div class="top-right-close" onclick="closePanel()">×</div>
+
+    <div class="feature-btn" onclick="toggle(this)">
+      <span>Aimbot</span>
+      <span class="status">Desativado</span>
+    </div>
+
+    <div class="feature-btn" onclick="toggle(this)">
+      <span>Aimfov</span>
+      <span class="status">Desativado</span>
+    </div>
+
+    <div class="feature-btn" onclick="toggle(this)">
+      <span>Aimlock</span>
+      <span class="status">Desativado</span>
+    </div>
+
+    <div class="feature-btn" onclick="toggle(this)">
+      <span>No Recoil</span>
+      <span class="status">Desativado</span>
+    </div>
+
+    <div class="feature-btn" onclick="toggle(this)">
+      <span>Atirar (Triggerbot)</span>
+      <span class="status">Desativado</span>
+    </div>
+
+    <div class="feature-btn" onclick="abrirFF()">
+      <span>Abrir FF</span>
+      <span class="status">↗</span>
+    </div>
+  </div>
+
+  <script>
+    function toggle(element) {
+      const status = element.querySelector('.status');
+      if (status.textContent === 'Desativado' || status.textContent === 'disabled') {
+        status.textContent = 'Ativado';
+        status.classList.add('active');
+      } else {
+        status.textContent = 'Desativado';
+        status.classList.remove('active');
+      }
+    }
+
+    function toggleBypass(element) {
+      const status = element.querySelector('.status');
+      if (status.textContent === 'Desativado' || status.textContent === 'disabled') {
+        status.textContent = 'Anti Ban e Anti Black ativados';
+        status.classList.add('active');
+      } else {
+        status.textContent = 'Desativado';
+        status.classList.remove('active');
+      }
+    }
+
+    function abrirFF() {
+      window.location.href = "https://apps.apple.com/app/id1300146617";
+    }
+
+    function closePanel() {
+      alert('Painel fechado');
+    }
+  </script>
+</body>
+</html>
